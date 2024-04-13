@@ -1,5 +1,5 @@
 # Text recognizer
 Features:
-- line counter
+- lines counter
 - language detector
 - text recognizer
