@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\TextRecognizer\\Engine\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{06591A8A-BBD5-4554-8B2C-8A418D1100E6}|ML.Engine\\ML.Engine.csproj|e:\\textrecognizer\\engine\\ml.engine\\services\\extractnumbersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06591A8A-BBD5-4554-8B2C-8A418D1100E6}|ML.Engine\\ML.Engine.csproj|solutionrelative:ml.engine\\services\\extractnumbersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06591A8A-BBD5-4554-8B2C-8A418D1100E6}|ML.Engine\\ML.Engine.csproj|e:\\textrecognizer\\engine\\ml.engine\\services\\languagedetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06591A8A-BBD5-4554-8B2C-8A418D1100E6}|ML.Engine\\ML.Engine.csproj|solutionrelative:ml.engine\\services\\languagedetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E3C36B-1A70-42C8-8918-0AC6AA6787A6}|CLI.Executor\\CLI.PdfExtractor.csproj|e:\\textrecognizer\\engine\\cli.executor\\cli.pdfextractor.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{55E3C36B-1A70-42C8-8918-0AC6AA6787A6}|CLI.Executor\\CLI.PdfExtractor.csproj|solutionrelative:cli.executor\\cli.pdfextractor.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E3C36B-1A70-42C8-8918-0AC6AA6787A6}|CLI.Executor\\CLI.PdfExtractor.csproj|e:\\textrecognizer\\engine\\cli.executor\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{55E3C36B-1A70-42C8-8918-0AC6AA6787A6}|CLI.Executor\\CLI.PdfExtractor.csproj|solutionrelative:cli.executor\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E3C36B-1A70-42C8-8918-0AC6AA6787A6}|CLI.Executor\\CLI.PdfExtractor.csproj|E:\\TextRecognizer\\Engine\\cli.executor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E3C36B-1A70-42C8-8918-0AC6AA6787A6}|CLI.Executor\\CLI.PdfExtractor.csproj|solutionrelative:cli.executor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06591A8A-BBD5-4554-8B2C-8A418D1100E6}|ML.Engine\\ML.Engine.csproj|E:\\TextRecognizer\\Engine\\ml.engine\\services\\detectlanguageworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06591A8A-BBD5-4554-8B2C-8A418D1100E6}|ML.Engine\\ML.Engine.csproj|solutionrelative:ml.engine\\services\\detectlanguageworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E3C36B-1A70-42C8-8918-0AC6AA6787A6}|CLI.Executor\\CLI.PdfExtractor.csproj|e:\\textrecognizer\\engine\\cli.executor\\cli.pdfextractor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{55E3C36B-1A70-42C8-8918-0AC6AA6787A6}|CLI.Executor\\CLI.PdfExtractor.csproj|solutionrelative:cli.executor\\cli.pdfextractor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C40BFA5F-4A94-4599-AD42-B4F94F254044}|Solution Items{C40BFA5F-4A94-4599-AD42-B4F94F254044}|E:\\TextRecognizer\\Engine\\Install-globally.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{C40BFA5F-4A94-4599-AD42-B4F94F254044}|Solution Items{C40BFA5F-4A94-4599-AD42-B4F94F254044}|solutionrelative:Install-globally.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C40BFA5F-4A94-4599-AD42-B4F94F254044}|Solution Items{C40BFA5F-4A94-4599-AD42-B4F94F254044}|E:\\TextRecognizer\\Engine\\Create-package.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{C40BFA5F-4A94-4599-AD42-B4F94F254044}|Solution Items{C40BFA5F-4A94-4599-AD42-B4F94F254044}|solutionrelative:Create-package.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C40BFA5F-4A94-4599-AD42-B4F94F254044}|Solution Items{C40BFA5F-4A94-4599-AD42-B4F94F254044}|E:\\TextRecognizer\\.config\\dotnet-tools.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B117ABDA-86FE-4029-A2BE-A0C35B4EA32F}|Logic.UT\\Logic.UT.csproj|E:\\TextRecognizer\\Engine\\logic.ut\\as_a_developer\\i_would_like_to_make_some_basic_operations_with_pdf_file.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B117ABDA-86FE-4029-A2BE-A0C35B4EA32F}|Logic.UT\\Logic.UT.csproj|solutionrelative:logic.ut\\as_a_developer\\i_would_like_to_make_some_basic_operations_with_pdf_file.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ExtractNumbersService.cs",
+              "DocumentMoniker": "E:\\TextRecognizer\\Engine\\ML.Engine\\Services\\ExtractNumbersService.cs",
+              "RelativeDocumentMoniker": "ML.Engine\\Services\\ExtractNumbersService.cs",
+              "ToolTip": "E:\\TextRecognizer\\Engine\\ML.Engine\\Services\\ExtractNumbersService.cs",
+              "RelativeToolTip": "ML.Engine\\Services\\ExtractNumbersService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T20:02:15.145Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DetectLanguageWorkflow.cs",
+              "DocumentMoniker": "E:\\TextRecognizer\\Engine\\ML.Engine\\Services\\DetectLanguageWorkflow.cs",
+              "RelativeDocumentMoniker": "ML.Engine\\Services\\DetectLanguageWorkflow.cs",
+              "ToolTip": "E:\\TextRecognizer\\Engine\\ML.Engine\\Services\\DetectLanguageWorkflow.cs",
+              "RelativeToolTip": "ML.Engine\\Services\\DetectLanguageWorkflow.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAmwBAAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T20:24:54.642Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\TextRecognizer\\Engine\\CLI.Executor\\Program.cs",
+              "RelativeDocumentMoniker": "CLI.Executor\\Program.cs",
+              "ToolTip": "E:\\TextRecognizer\\Engine\\CLI.Executor\\Program.cs",
+              "RelativeToolTip": "CLI.Executor\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAiwBMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T20:03:19.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LanguageDetector.cs",
+              "DocumentMoniker": "E:\\TextRecognizer\\Engine\\ML.Engine\\Services\\LanguageDetector.cs",
+              "RelativeDocumentMoniker": "ML.Engine\\Services\\LanguageDetector.cs",
+              "ToolTip": "E:\\TextRecognizer\\Engine\\ML.Engine\\Services\\LanguageDetector.cs",
+              "RelativeToolTip": "ML.Engine\\Services\\LanguageDetector.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T11:25:32.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CLI.PdfExtractor",
+              "DocumentMoniker": "E:\\TextRecognizer\\Engine\\CLI.Executor\\CLI.PdfExtractor.csproj",
+              "RelativeDocumentMoniker": "CLI.Executor\\CLI.PdfExtractor.csproj",
+              "ToolTip": "E:\\TextRecognizer\\Engine\\CLI.Executor\\CLI.PdfExtractor.csproj",
+              "RelativeToolTip": "CLI.Executor\\CLI.PdfExtractor.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-13T11:25:07.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "README.md",
+              "DocumentMoniker": "E:\\TextRecognizer\\Engine\\CLI.Executor\\README.md",
+              "RelativeDocumentMoniker": "CLI.Executor\\README.md",
+              "ToolTip": "E:\\TextRecognizer\\Engine\\CLI.Executor\\README.md",
+              "RelativeToolTip": "CLI.Executor\\README.md",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-04-13T11:22:39.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create-package.ps1",
+              "DocumentMoniker": "E:\\TextRecognizer\\Engine\\Create-package.ps1",
+              "RelativeDocumentMoniker": "Create-package.ps1",
+              "ToolTip": "E:\\TextRecognizer\\Engine\\Create-package.ps1",
+              "RelativeToolTip": "Create-package.ps1",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-13T11:23:59.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Install-globally.ps1",
+              "DocumentMoniker": "E:\\TextRecognizer\\Engine\\Install-globally.ps1",
+              "RelativeDocumentMoniker": "Install-globally.ps1",
+              "ToolTip": "E:\\TextRecognizer\\Engine\\Install-globally.ps1",
+              "RelativeToolTip": "Install-globally.ps1",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-13T11:24:00.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CLI.PdfExtractor",
+              "DocumentMoniker": "E:\\TextRecognizer\\Engine\\CLI.Executor\\CLI.PdfExtractor.csproj",
+              "RelativeDocumentMoniker": "CLI.Executor\\CLI.PdfExtractor.csproj",
+              "ToolTip": "E:\\TextRecognizer\\Engine\\CLI.Executor\\CLI.PdfExtractor.csproj",
+              "RelativeToolTip": "CLI.Executor\\CLI.PdfExtractor.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-13T11:24:03.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "dotnet-tools.json",
+              "DocumentMoniker": "E:\\TextRecognizer\\.config\\dotnet-tools.json",
+              "RelativeDocumentMoniker": "..\\.config\\dotnet-tools.json",
+              "ToolTip": "E:\\TextRecognizer\\.config\\dotnet-tools.json",
+              "RelativeToolTip": "..\\.config\\dotnet-tools.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-13T11:23:54.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "I_would_like_to_make_some_basic_operations_with_pdf_file.cs",
+              "DocumentMoniker": "E:\\TextRecognizer\\Engine\\Logic.UT\\As_a_developer\\I_would_like_to_make_some_basic_operations_with_pdf_file.cs",
+              "RelativeDocumentMoniker": "Logic.UT\\As_a_developer\\I_would_like_to_make_some_basic_operations_with_pdf_file.cs",
+              "ToolTip": "E:\\TextRecognizer\\Engine\\Logic.UT\\As_a_developer\\I_would_like_to_make_some_basic_operations_with_pdf_file.cs",
+              "RelativeToolTip": "Logic.UT\\As_a_developer\\I_would_like_to_make_some_basic_operations_with_pdf_file.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAcwDQAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T20:23:09.025Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

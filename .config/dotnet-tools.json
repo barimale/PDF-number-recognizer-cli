@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "CLI.PdfExtractor": {
+      "version": "1.0.4",
+      "commands": [
+        "pdf-extractor"
+      ]
+    }
+  }
+}

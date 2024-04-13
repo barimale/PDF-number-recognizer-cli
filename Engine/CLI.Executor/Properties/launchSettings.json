@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "1.Tool.Executor.CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "extract-numbers \"e://Refactoring To Patterns - Joshua Kerievsky.pdf\" -n 10"
+    }
+  }
+}

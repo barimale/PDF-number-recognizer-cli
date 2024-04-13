@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+	  <PackAsTool>true</PackAsTool>
+	  <ToolCommandName>pdf-extractor</ToolCommandName>
+	  <PackageOutputPath>./nupkg</PackageOutputPath>
+	  <Version>1.0.4</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.1.1" />
+    <PackageReference Include="McMaster.Extensions.Hosting.CommandLine" Version="4.1.1" />
+	  <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.3" />
+	  <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.3" />
+	  <PackageReference Include="Samhammer.LanguageDetection" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ML.Engine\ML.Engine.csproj" />
+  </ItemGroup>
+
+</Project>

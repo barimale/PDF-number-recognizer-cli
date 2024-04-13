@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DetectLanguage" Version="1.0.0" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="Microsoft.Recognizers.Definitions" Version="1.8.8" />
+    <PackageReference Include="Microsoft.Recognizers.Text" Version="1.8.8" />
+    <PackageReference Include="Microsoft.Recognizers.Text.Choice" Version="1.8.8" />
+    <PackageReference Include="Microsoft.Recognizers.Text.DataTypes.TimexExpression" Version="1.8.8" />
+    <PackageReference Include="Microsoft.Recognizers.Text.DateTime" Version="1.8.8" />
+    <PackageReference Include="Microsoft.Recognizers.Text.Number" Version="1.8.8" />
+    <PackageReference Include="Microsoft.Recognizers.Text.NumberWithUnit" Version="1.8.8" />
+    <PackageReference Include="Microsoft.Recognizers.Text.Sequence" Version="1.8.8" />
+  </ItemGroup>
+
+</Project>
