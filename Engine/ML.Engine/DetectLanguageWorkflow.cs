@@ -22,7 +22,24 @@ namespace TR.Engine
             }
             catch (Exception)
             {
-                throw;
+                return null;
+            }
+        }
+
+        public int? PdfLineCount(DetectLanguageWorkflowClass input)
+        {
+            try
+            {
+                _input = input;
+
+                var engine = new PdfReaderService();
+                var output = engine.ExtractTextFromPDF(_input.OutputModelPath);
+
+                return output.Count;
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
     }

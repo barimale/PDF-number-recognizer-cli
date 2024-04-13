@@ -67,9 +67,13 @@ namespace CLI.Executor
                         RandomAmount = RandomAmount
                     };
 
-                    var resultId = engine.Execute(inputData);
+                    var resultCulture = engine.Execute(inputData);
                     Console.WriteLine("Detected language:");
-                    Console.WriteLine($"{resultId}");
+                    Console.WriteLine($"{resultCulture}");
+
+                    var linesCount = engine.PdfLineCount(inputData);
+                    Console.WriteLine("Lines count:");
+                    Console.WriteLine($"{linesCount}");
 
                     return 0;
                 }
