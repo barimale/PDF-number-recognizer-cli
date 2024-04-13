@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ML.Engine.Contract;
-using ML.Engine.Services;
+using TR.Engine;
 
 namespace CLI.Executor
 {
@@ -25,7 +25,7 @@ namespace CLI.Executor
                 .ConfigureServices((context, services) =>
                 {
                     services
-                        .AddScoped<IExtractNumbersService, ExtractNumbersService>()
+                        .AddScoped<IExtractNumbersService, ExtractNumbersWorkflow>()
                         .AddScoped<IDetectLanguageWorkflow, DetectLanguageWorkflow>()
                         .AddSingleton(PhysicalConsole.Singleton);
                 })

@@ -5,12 +5,13 @@ using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.Sequence;
 using ML.Engine.Contract;
+using ML.Engine.Services;
 using Newtonsoft.Json;
 using System.Text;
 
-namespace ML.Engine.Services
+namespace TR.Engine
 {
-    public class ExtractNumbersService : IExtractNumbersService
+    public class ExtractNumbersWorkflow : IExtractNumbersService
     {
         private ExtractNumbersModelWorkflowClass _input;
 
@@ -21,7 +22,7 @@ namespace ML.Engine.Services
             var engine = new PdfReaderService();
             var output = engine.ExtractTextFromPDF(_input.PdfPath);
 
-            if(_input.Culture == null)
+            if (_input.Culture == null)
             {
                 var detector = new LanguageDetector();
                 var result = detector.Detect(output, 20).Result;
@@ -33,7 +34,7 @@ namespace ML.Engine.Services
             var rnd = new Random();
             var narrowed = output.OrderBy(x => rnd.Next()).Take(_input.RandomAmount).ToList();
 
-            foreach(var item in narrowed)
+            foreach (var item in narrowed)
             {
                 var results = ParseAll(item, _input.Culture);
 

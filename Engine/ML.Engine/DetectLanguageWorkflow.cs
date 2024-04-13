@@ -1,6 +1,7 @@
 ﻿using ML.Engine.Contract;
+using ML.Engine.Services;
 
-namespace ML.Engine.Services
+namespace TR.Engine
 {
     public class DetectLanguageWorkflow : IDetectLanguageWorkflow
     {

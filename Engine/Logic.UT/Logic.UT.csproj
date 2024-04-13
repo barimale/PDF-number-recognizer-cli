@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CLI.Executor\CLI.PdfExtractor.csproj" />
-    <ProjectReference Include="..\ML.Engine\ML.Engine.csproj" />
+    <ProjectReference Include="..\ML.Engine\TR.Engine.csproj" />
   </ItemGroup>
 
   <ItemGroup>

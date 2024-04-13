@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ML.Engine\ML.Engine.csproj" />
+    <ProjectReference Include="..\ML.Engine\TR.Engine.csproj" />
   </ItemGroup>
 
 </Project>
