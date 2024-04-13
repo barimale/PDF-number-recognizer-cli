@@ -62,6 +62,11 @@ namespace CLI.Executor
             {
                 try
                 {
+                    if (string.IsNullOrEmpty(PdfPath))
+        {
+            app.ShowHelp();
+            return 0;
+                    }
                     var engine = app.GetRequiredService<IDetectLanguageWorkflow>();
 
                     var inputData = new DetectLanguageWorkflowClass()
@@ -111,7 +116,7 @@ namespace CLI.Executor
             {
                 try
                 {
-                    if (string.IsNullOrEmpty(Url))
+                    if (string.IsNullOrEmpty(PdfPath))
         {
             app.ShowHelp();
             return 0;
@@ -168,6 +173,11 @@ namespace CLI.Executor
             {
                 try
                 {
+                    if (string.IsNullOrEmpty(PdfPath))
+        {
+            app.ShowHelp();
+            return 0;
+                    }
                     var engine = app.GetRequiredService<IExtractNumbersService>();
 
                     if (string.IsNullOrEmpty(PdfPath))
