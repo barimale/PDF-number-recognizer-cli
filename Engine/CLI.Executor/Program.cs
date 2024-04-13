@@ -38,14 +38,15 @@ namespace CLI.PdfExtractor
 
         private async Task<int> OnExecuteAsync(
             CommandLineApplication app,
-            CancellationToken cancellationToken = default)
+            CancellationToken cancellationToken)
         {
             app.ShowHelp();
             return 0;
         }
 
         [Command("language-detect",
-             Description = "detect entities language")]
+            UnrecognizedArgumentHandling = UnrecognizedArgumentHandling.StopParsingAndCollect,
+            Description = "detect entities language")]
         [HelpOption("-?")]
         private class DetectLanguage
         {
@@ -55,9 +56,10 @@ namespace CLI.PdfExtractor
             {
                 _logger = logger;
             }
+
             [FileExists]
             [Argument(0,
-                            Description = "input path to PDF document")]
+                Description = "input path to PDF document")]
             private string PdfPath { get; } = string.Empty;
 
             [Option("-n",
@@ -65,8 +67,8 @@ namespace CLI.PdfExtractor
             private int RandomAmount { get; } = 5;
 
             private async Task<int> OnExecuteAsync(
-                                    CommandLineApplication app,
-                                    CancellationToken cancellationToken = default)
+                CommandLineApplication app,
+                CancellationToken cancellationToken = default)
             {
                 try
                 {
@@ -85,8 +87,7 @@ namespace CLI.PdfExtractor
                     };
 
                     var resultCulture = engine.Execute(inputData);
-                    Console.WriteLine("Detected language:");
-                    Console.WriteLine($"{resultCulture}");
+                    Console.WriteLine($"Detected language: {resultCulture}");
 
                     return 0;
                 }
@@ -99,7 +100,8 @@ namespace CLI.PdfExtractor
         }
 
         [Command("count-lines",
-             Description = "count lines of pdf document")]
+            UnrecognizedArgumentHandling = UnrecognizedArgumentHandling.StopParsingAndCollect,
+            Description = "count lines of pdf document")]
         [HelpOption("-?")]
         private class LinesCounter
         {
@@ -109,6 +111,7 @@ namespace CLI.PdfExtractor
             {
                 _logger = logger;
             }
+
             [FileExists]
             [Argument(0, Description = "input path to PDF document")]
             private string PdfPath { get; } = string.Empty;
@@ -133,8 +136,7 @@ namespace CLI.PdfExtractor
                     };
 
                     var linesCount = engine.Execute(inputData);
-                    Console.WriteLine("Lines count:");
-                    Console.WriteLine($"{linesCount}");
+                    Console.WriteLine($"Lines count: {linesCount}");
 
                     return 0;
                 }
@@ -147,7 +149,8 @@ namespace CLI.PdfExtractor
         }
 
         [Command("extract-numbers",
-             Description = "Use engine to extract numbers")]
+            UnrecognizedArgumentHandling = UnrecognizedArgumentHandling.StopParsingAndCollect,
+            Description = "Use engine to extract numbers")]
         [HelpOption("-?")]
         private class ExtractEntities
         {
@@ -183,6 +186,7 @@ namespace CLI.PdfExtractor
                         app.ShowHelp();
                         return 0;
                     }
+
                     var engine = app.GetRequiredService<IExtractNumbersService>();
 
                     if (string.IsNullOrEmpty(PdfPath))
