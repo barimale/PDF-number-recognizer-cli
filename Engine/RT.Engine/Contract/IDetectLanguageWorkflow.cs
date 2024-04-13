@@ -1,6 +1,4 @@
-﻿using TR.Engine;
-
-namespace TR.Engine.Contract
+﻿namespace TR.Engine.Contract
 {
     public interface IDetectLanguageWorkflow
     {

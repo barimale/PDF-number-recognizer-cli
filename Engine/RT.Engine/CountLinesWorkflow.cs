@@ -1,5 +1,5 @@
-﻿using TR.Engine.Services;
-using TR.Engine.Contract;
+﻿using TR.Engine.Contract;
+using TR.Engine.Services;
 
 namespace TR.Engine
 {

@@ -108,12 +108,10 @@ namespace CLI.PdfExtractor
                 _logger = logger;
             }
             [FileExists]
-            [Argument(0,
-                            Description = "input path to PDF document")]
+            [Argument(0, Description = "input path to PDF document")]
             private string PdfPath { get; } = string.Empty;
 
-            [Option("-n",
-                 Description = "random amount")]
+            [Option("-n", Description = "random amount")]
             [Range(1, 500)]
             private int RandomAmount { get; } = 5;
 

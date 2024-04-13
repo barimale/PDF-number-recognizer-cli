@@ -26,3 +26,5 @@
 /Engine/.vs/CLI.ML.Engine/FileContentIndex
 /Engine/CLI.Executor/nupkg
 /Engine/.vs/CLI.TR.Engine
+/Engine/RT.Engine/obj
+/Engine/RT.Engine/bin
