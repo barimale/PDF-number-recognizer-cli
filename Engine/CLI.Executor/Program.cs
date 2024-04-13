@@ -11,6 +11,7 @@ namespace CLI.Executor
 {
     [Command(
         Name = "pdf-extractor",
+        UnrecognizedArgumentHandling = UnrecognizedArgumentHandling.StopParsingAndCollect,
         Description = "tool for text recgonition inside the PDF documents and extraction entities"),
         Subcommand(typeof(DetectLanguage), typeof(LinesCounter), typeof(ExtractEntities))
     ]
@@ -35,6 +36,10 @@ namespace CLI.Executor
                 .RunCommandLineApplicationAsync<Program>(args);
         }
 
+        private Task OnExecuteAdyc()
+        {
+            _greeter.Greet(Name, Language);
+        }
 
         [Command("language-detect",
              Description = "detect entities language")]
