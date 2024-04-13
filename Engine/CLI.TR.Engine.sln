@@ -16,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLI.PdfExtractor", "CLI.Exe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic.UT", "Logic.UT\Logic.UT.csproj", "{B117ABDA-86FE-4029-A2BE-A0C35B4EA32F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TR.Engine", "ML.Engine\TR.Engine.csproj", "{06591A8A-BBD5-4554-8B2C-8A418D1100E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TR.Engine", "TR.Engine\TR.Engine.csproj", "{06591A8A-BBD5-4554-8B2C-8A418D1100E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
