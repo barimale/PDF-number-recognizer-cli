@@ -27,6 +27,7 @@ namespace CLI.Executor
                 .ConfigureServices((context, services) =>
                 {
                     services
+                        .AddScoped<ICountLinesWorkflow, CountLinesWorkflow>()
                         .AddScoped<IExtractNumbersService, ExtractNumbersWorkflow>()
                         .AddScoped<IDetectLanguageWorkflow, DetectLanguageWorkflow>()
                         .AddSingleton(PhysicalConsole.Singleton);
@@ -88,9 +89,9 @@ namespace CLI.Executor
         [HelpOption("-?")]
         private class LinesCounter
         {
-            private readonly ILogger<DetectLanguage> _logger;
+            private readonly ILogger<LinesCounter> _logger;
 
-            public LinesCounter(ILogger<DetectLanguage> logger)
+            public LinesCounter(ILogger<LinesCounter> logger)
             {
                 _logger = logger;
             }
@@ -107,15 +108,14 @@ namespace CLI.Executor
             {
                 try
                 {
-                    var engine = app.GetRequiredService<IDetectLanguageWorkflow>();
+                    var engine = app.GetRequiredService<ICountLinesWorkflow>();
 
-                    var inputData = new DetectLanguageWorkflowClass()
+                    var inputData = new CountLinesWorkflowClass()
                     {
                         OutputModelPath = PdfPath,
-                        RandomAmount = RandomAmount
                     };
 
-                    var linesCount = engine.PdfLineCount(inputData);
+                    var linesCount = engine.Execute(inputData);
                     Console.WriteLine("Lines count:");
                     Console.WriteLine($"{linesCount}");
 
