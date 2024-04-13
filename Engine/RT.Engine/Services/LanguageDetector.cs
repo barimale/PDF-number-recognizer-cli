@@ -6,7 +6,6 @@ namespace TR.Engine.Services
     {
         public async Task<string?> Detect(List<string> input, int randomAmount)
         {
-            // WIP change this
             DetectLanguageClient client = new DetectLanguageClient("30794da0c353725a323396aebfa864c2");
 
             var rnd = new Random();
