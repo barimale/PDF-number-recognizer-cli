@@ -2,7 +2,7 @@
   "profiles": {
     "1.Tool.Executor.CLI": {
       "commandName": "Project",
-      "commandLineArgs": "/?\r\n"
+      "commandLineArgs": "language-detect \"e://Refactoring To Patterns - Joshua Kerievsky.pdf\""
     }
   }
 }
