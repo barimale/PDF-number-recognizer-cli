@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Sequence;
 
 namespace TR.Engine.Utilities
 {
-    public static class PdfParser
+    public static class PdfParserUtility
     {
         public static IEnumerable<ModelResult> ParseAll(string query, string culture)
         {

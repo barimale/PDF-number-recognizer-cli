@@ -16,7 +16,7 @@ namespace TR.Engine.Services
             var dic = new Dictionary<string, IEnumerable<ModelResult>>();
             foreach (var item in narrowed)
             {
-                var results = PdfParser.ParseAll(item, culture);
+                var results = PdfParserUtility.ParseAll(item, culture);
                 dic.Add(item, results);
             }
 
