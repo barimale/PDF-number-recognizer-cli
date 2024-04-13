@@ -47,7 +47,7 @@ namespace CLI.Executor
             {
                 _logger = logger;
             }
-
+[FileExists]
             [Argument(0,
                 Description = "input path to PDF document")]
             private string PdfPath { get; } = string.Empty;
@@ -95,11 +95,14 @@ namespace CLI.Executor
             {
                 _logger = logger;
             }
-
+[FileExists]
             [Argument(0,
                 Description = "input path to PDF document")]
             private string PdfPath { get; } = string.Empty;
 
+            [Option("-n",
+                 Description = "random amount")]
+            [Range(1, 500)]
             private int RandomAmount { get; } = 5;
 
             private async Task<int> OnExecuteAsync(
@@ -108,6 +111,11 @@ namespace CLI.Executor
             {
                 try
                 {
+                    if (string.IsNullOrEmpty(Url))
+        {
+            app.ShowHelp();
+            return 0;
+                    }
                     var engine = app.GetRequiredService<ICountLinesWorkflow>();
 
                     var inputData = new CountLinesWorkflowClass()
@@ -140,7 +148,7 @@ namespace CLI.Executor
             {
                 _logger = logger;
             }
-
+[FileExists]
             [Argument(0,
                 Description = "input path to PDF document")]
             private string PdfPath { get; } = string.Empty;
@@ -151,6 +159,7 @@ namespace CLI.Executor
 
             [Option("-n",
                  Description = "random amount")]
+            [Range(1, 500)]
             private int RandomAmount { get; } = 5;
 
             private async Task<int> OnExecuteAsync(
