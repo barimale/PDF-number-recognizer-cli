@@ -12,7 +12,7 @@ namespace CLI.PdfExtractor
     [Command(
         Name = "pdf-extractor",
         UnrecognizedArgumentHandling = UnrecognizedArgumentHandling.StopParsingAndCollect,
-        Description = "tool for text recgonition inside the PDF documents and extraction entities"),
+        Description = "tool for text recgonition of the PDF documents and extraction entities"),
         Subcommand(typeof(DetectLanguage), typeof(LinesCounter), typeof(ExtractEntities))
     ]
     [HelpOption("-?")]
