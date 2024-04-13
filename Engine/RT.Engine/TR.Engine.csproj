@@ -17,6 +17,7 @@
     <PackageReference Include="Microsoft.Recognizers.Text.Number" Version="1.8.8" />
     <PackageReference Include="Microsoft.Recognizers.Text.NumberWithUnit" Version="1.8.8" />
     <PackageReference Include="Microsoft.Recognizers.Text.Sequence" Version="1.8.8" />
+    <PackageReference Include="Samhammer.LanguageDetection" Version="2.0.0" />
   </ItemGroup>
 
 </Project>

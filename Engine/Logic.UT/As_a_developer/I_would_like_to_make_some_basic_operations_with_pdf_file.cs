@@ -44,23 +44,5 @@ namespace Logic.UT.As_a_developer
             Assert.NotNull(result);
             Assert.Equal("en", result);
         }
-
-        [Fact]
-        public async Task Read_pdf_file_and_detect_language_and_extract_entities()
-        {
-            // given
-            var engine = new PdfReaderService();
-            var path = ".//Data//Refactoring To Patterns - Joshua Kerievsky.pdf";
-            var output = engine.ExtractTextFromPDF(path);
-            var detector = new LanguageDetector();
-            var result = await detector.Detect(output, 5);
-
-            // when
-            //WIP
-
-            // then
-            Assert.NotNull(result);
-            Assert.Equal("en", result);
-        }
     }
 }

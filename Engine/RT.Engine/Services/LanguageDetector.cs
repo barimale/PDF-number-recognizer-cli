@@ -20,7 +20,7 @@ namespace TR.Engine.Services
             var theMostFrequent = results
                 .Where(p => !string.IsNullOrEmpty(p))
                 .GroupBy(p => p)
-                .OrderByDescending(p => p)
+                .OrderByDescending(pp => pp.Key)
                 .FirstOrDefault();
 
             return theMostFrequent != null ? theMostFrequent.Key : null;
