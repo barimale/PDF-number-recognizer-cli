@@ -44,7 +44,7 @@ namespace CLI.PdfExtractor.Subcommands
 
                 var inputData = new DetectLanguageWorkflowClass()
                 {
-                    OutputModelPath = PdfPath,
+                    PdfPath = PdfPath,
                     RandomAmount = RandomAmount
                 };
 

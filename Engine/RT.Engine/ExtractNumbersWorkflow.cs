@@ -10,25 +10,32 @@ namespace TR.Engine
 
         public Dictionary<string, IEnumerable<ModelResult>> Execute(ExtractNumbersModelWorkflowClass input)
         {
-            _input = input;
-
-            var engine = new PdfReaderService();
-            var output = engine.ExtractTextFromPDF(_input.PdfPath);
-
-            if (_input.Culture == null)
+            try
             {
-                var detector = new LanguageDetector();
-                var result = detector.Detect(output, 20).Result;
-                _input.Culture = result;
+                _input = input;
+
+                var engine = new PdfReaderService();
+                var output = engine.ExtractTextFromPDF(_input.PdfPath);
+
+                if (_input.Culture == null)
+                {
+                    var detector = new LanguageDetector();
+                    var result = detector.Detect(output, 20).Result;
+                    _input.Culture = result;
+                }
+
+                var parser = new PdfParserService();
+                var results = parser.Execute(
+                    output,
+                    _input.RandomAmount,
+                    _input.Culture);
+
+                return results;
             }
-
-            var parser = new PdfParserService();
-            var results = parser.Execute(
-                output,
-                _input.RandomAmount,
-                _input.Culture);
-
-            return results;
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 

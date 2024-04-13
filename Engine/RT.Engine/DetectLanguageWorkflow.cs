@@ -13,7 +13,7 @@ namespace TR.Engine
                 _input = input;
 
                 var engine = new PdfReaderService();
-                var output = engine.ExtractTextFromPDF(_input.OutputModelPath);
+                var output = engine.ExtractTextFromPDF(_input.PdfPath);
 
                 var detector = new LanguageDetector();
                 var result = detector.Detect(output, _input.RandomAmount).Result;
@@ -22,24 +22,7 @@ namespace TR.Engine
             }
             catch (Exception)
             {
-                return null;
-            }
-        }
-
-        public int? PdfLineCount(DetectLanguageWorkflowClass input)
-        {
-            try
-            {
-                _input = input;
-
-                var engine = new PdfReaderService();
-                var output = engine.ExtractTextFromPDF(_input.OutputModelPath);
-
-                return output.Count;
-            }
-            catch (Exception)
-            {
-                return null;
+                throw;
             }
         }
     }
@@ -47,6 +30,6 @@ namespace TR.Engine
     public class DetectLanguageWorkflowClass
     {
         public int RandomAmount { get; set; }
-        public string OutputModelPath { get; set; }
+        public string PdfPath { get; set; }
     }
 }

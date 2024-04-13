@@ -20,7 +20,7 @@ namespace TR.Engine
             }
             catch (Exception)
             {
-                return null;
+                throw;
             }
         }
     }
