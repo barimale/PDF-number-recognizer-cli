@@ -10,7 +10,7 @@ namespace CLI.Executor
     [Command(
         Name = "pdf-extractor",
         Description = "tool for text recgonition inside the PDF documents and extraction entities"),
-        Subcommand(typeof(DetectLanguage), typeof(ExtractEntities))
+        Subcommand(typeof(DetectLanguage), typeof(LinesCounter), typeof(ExtractEntities))
     ]
     [HelpOption("-?")]
     internal class Program
@@ -70,6 +70,48 @@ namespace CLI.Executor
                     var resultCulture = engine.Execute(inputData);
                     Console.WriteLine("Detected language:");
                     Console.WriteLine($"{resultCulture}");
+
+                    return 0;
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex.Message, ex);
+                    return 1;
+                }
+            }
+        }
+
+        [Command("count-lines",
+             Description = "count lines of pdf document")]
+        [HelpOption("-?")]
+        private class LinesCounter
+        {
+            private readonly ILogger<DetectLanguage> _logger;
+
+            public LinesCounter(ILogger<DetectLanguage> logger)
+            {
+                _logger = logger;
+            }
+
+            [Argument(0,
+                Description = "input path to PDF document")]
+            private string PdfPath { get; } = string.Empty;
+
+            private int RandomAmount { get; } = 5;
+
+            private async Task<int> OnExecuteAsync(
+                                    CommandLineApplication app,
+                                    CancellationToken cancellationToken = default)
+            {
+                try
+                {
+                    var engine = app.GetRequiredService<IDetectLanguageWorkflow>();
+
+                    var inputData = new DetectLanguageWorkflowClass()
+                    {
+                        OutputModelPath = PdfPath,
+                        RandomAmount = RandomAmount
+                    };
 
                     var linesCount = engine.PdfLineCount(inputData);
                     Console.WriteLine("Lines count:");
