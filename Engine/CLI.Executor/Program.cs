@@ -36,11 +36,12 @@ namespace CLI.PdfExtractor
                 .RunCommandLineApplicationAsync<Program>(args);
         }
 
-        private Task OnExecuteAsyc()
+        private async Task<int> OnExecuteAsync(
+            CommandLineApplication app,
+            CancellationToken cancellationToken = default)
         {
-            //_greeter.Greet(Name, Language);
-
-            return Task.CompletedTask;
+            app.ShowHelp();
+            return 0;
         }
 
         [Command("language-detect",
@@ -74,6 +75,7 @@ namespace CLI.PdfExtractor
                         app.ShowHelp();
                         return 0;
                     }
+
                     var engine = app.GetRequiredService<IDetectLanguageWorkflow>();
 
                     var inputData = new DetectLanguageWorkflowClass()
@@ -111,10 +113,6 @@ namespace CLI.PdfExtractor
             [Argument(0, Description = "input path to PDF document")]
             private string PdfPath { get; } = string.Empty;
 
-            [Option("-n", Description = "random amount")]
-            [Range(1, 500)]
-            private int RandomAmount { get; } = 5;
-
             private async Task<int> OnExecuteAsync(
                                     CommandLineApplication app,
                                     CancellationToken cancellationToken = default)
@@ -126,6 +124,7 @@ namespace CLI.PdfExtractor
                         app.ShowHelp();
                         return 0;
                     }
+
                     var engine = app.GetRequiredService<ICountLinesWorkflow>();
 
                     var inputData = new CountLinesWorkflowClass()
@@ -161,7 +160,7 @@ namespace CLI.PdfExtractor
 
             [FileExists]
             [Argument(0,
-                            Description = "input path to PDF document")]
+                Description = "input path to PDF document")]
             private string PdfPath { get; } = string.Empty;
 
             [Option("-l",
