@@ -3,7 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ML.Engine.Contract;
+using Newtonsoft.Json;
 using TR.Engine;
+using TR.Engine.Utilities;
 
 namespace CLI.Executor
 {
@@ -169,7 +171,16 @@ namespace CLI.Executor
                         RandomAmount = RandomAmount
                     };
 
-                    var resultId = engine.Execute(inputData);
+                    var results = engine.Execute(inputData);
+
+                    foreach (var item in results)
+                    {
+                        Console.WriteLine("For the text line: " + item.Key);
+
+                        Console.WriteLine(item.Value.Any() ? $"I found the following entities ({item.Value.Count():d}):" : "I found no entities.");
+                        item.Value.ToList().ForEach(result => Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
+                        Console.WriteLine();
+                    }
 
                     return 0;
                 }

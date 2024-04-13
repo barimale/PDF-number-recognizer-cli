@@ -1,9 +1,10 @@
-﻿using TR.Engine;
+﻿using Microsoft.Recognizers.Text;
+using TR.Engine;
 
 namespace ML.Engine.Contract
 {
     public interface IExtractNumbersService
     {
-        bool Execute(ExtractNumbersModelWorkflowClass input);
+        Dictionary<string, IEnumerable<ModelResult>> Execute(ExtractNumbersModelWorkflowClass input);
     }
 }
