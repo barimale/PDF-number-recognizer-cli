@@ -1,8 +1,6 @@
 ﻿using Microsoft.Recognizers.Text;
-using ML.Engine.Contract;
-using ML.Engine.Services;
-using System.Text;
-using TR.Engine.Utilities;
+using TR.Engine.Contract;
+using TR.Engine.Services;
 
 namespace TR.Engine
 {
@@ -24,19 +22,13 @@ namespace TR.Engine
                 _input.Culture = result;
             }
 
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            var parser = new PdfParserService();
+            var results = parser.Execute(
+                output,
+                _input.RandomAmount,
+                _input.Culture);
 
-            var rnd = new Random();
-            var narrowed = output.OrderBy(x => rnd.Next()).Take(_input.RandomAmount).ToList();
-
-            var dic = new Dictionary<string, IEnumerable<ModelResult>>();
-            foreach (var item in narrowed)
-            {
-                var results = PdfParser.ParseAll(item, _input.Culture);
-                dic.Add(item, results);
-            }
-
-            return dic;
+            return results;
         }
     }
 

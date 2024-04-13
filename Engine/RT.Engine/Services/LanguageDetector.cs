@@ -1,13 +1,13 @@
 ﻿using DetectLanguage;
 
-namespace ML.Engine.Services
+namespace TR.Engine.Services
 {
     public class LanguageDetector
     {
         public async Task<string?> Detect(List<string> input, int randomAmount)
         {
             DetectLanguageClient client = new DetectLanguageClient("30794da0c353725a323396aebfa864c2");
-            
+
             var rnd = new Random();
             var narrowed = input.OrderBy(x => rnd.Next()).Take(randomAmount).ToList();
 

@@ -2,7 +2,7 @@
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 
-namespace ML.Engine.Services
+namespace TR.Engine.Services
 {
     public class PdfReaderService
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Recognizers.Text;
 using TR.Engine;
 
-namespace ML.Engine.Contract
+namespace TR.Engine.Contract
 {
     public interface IExtractNumbersService
     {

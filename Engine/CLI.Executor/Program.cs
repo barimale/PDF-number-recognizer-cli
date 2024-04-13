@@ -2,12 +2,12 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using ML.Engine.Contract;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 using TR.Engine;
-using TR.Engine.Utilities;
+using TR.Engine.Contract;
 
-namespace CLI.Executor
+namespace CLI.PdfExtractor
 {
     [Command(
         Name = "pdf-extractor",
@@ -36,9 +36,11 @@ namespace CLI.Executor
                 .RunCommandLineApplicationAsync<Program>(args);
         }
 
-        private Task OnExecuteAdyc()
+        private Task OnExecuteAsyc()
         {
-            _greeter.Greet(Name, Language);
+            //_greeter.Greet(Name, Language);
+
+            return Task.CompletedTask;
         }
 
         [Command("language-detect",
@@ -52,9 +54,9 @@ namespace CLI.Executor
             {
                 _logger = logger;
             }
-[FileExists]
+            [FileExists]
             [Argument(0,
-                Description = "input path to PDF document")]
+                            Description = "input path to PDF document")]
             private string PdfPath { get; } = string.Empty;
 
             [Option("-n",
@@ -68,9 +70,9 @@ namespace CLI.Executor
                 try
                 {
                     if (string.IsNullOrEmpty(PdfPath))
-        {
-            app.ShowHelp();
-            return 0;
+                    {
+                        app.ShowHelp();
+                        return 0;
                     }
                     var engine = app.GetRequiredService<IDetectLanguageWorkflow>();
 
@@ -105,9 +107,9 @@ namespace CLI.Executor
             {
                 _logger = logger;
             }
-[FileExists]
+            [FileExists]
             [Argument(0,
-                Description = "input path to PDF document")]
+                            Description = "input path to PDF document")]
             private string PdfPath { get; } = string.Empty;
 
             [Option("-n",
@@ -122,9 +124,9 @@ namespace CLI.Executor
                 try
                 {
                     if (string.IsNullOrEmpty(PdfPath))
-        {
-            app.ShowHelp();
-            return 0;
+                    {
+                        app.ShowHelp();
+                        return 0;
                     }
                     var engine = app.GetRequiredService<ICountLinesWorkflow>();
 
@@ -158,9 +160,10 @@ namespace CLI.Executor
             {
                 _logger = logger;
             }
-[FileExists]
+
+            [FileExists]
             [Argument(0,
-                Description = "input path to PDF document")]
+                            Description = "input path to PDF document")]
             private string PdfPath { get; } = string.Empty;
 
             [Option("-l",
@@ -179,9 +182,9 @@ namespace CLI.Executor
                 try
                 {
                     if (string.IsNullOrEmpty(PdfPath))
-        {
-            app.ShowHelp();
-            return 0;
+                    {
+                        app.ShowHelp();
+                        return 0;
                     }
                     var engine = app.GetRequiredService<IExtractNumbersService>();
 
