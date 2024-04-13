@@ -15,10 +15,12 @@ namespace CLI.PdfExtractor.Subcommands
     public class ExtractEntities
     {
         private readonly ILogger<ExtractEntities> _logger;
+        private readonly IConsole _console;
 
-        public ExtractEntities(ILogger<ExtractEntities> logger)
+        public ExtractEntities(ILogger<ExtractEntities> logger, IConsole console)
         {
             _logger = logger;
+            _console = console;
         }
 
         [FileExists]
@@ -63,11 +65,11 @@ namespace CLI.PdfExtractor.Subcommands
 
                 foreach (var item in results)
                 {
-                    Console.WriteLine("For the text line: " + item.Key);
+                    _console.WriteLine("For the text line: " + item.Key);
 
-                    Console.WriteLine(item.Value.Any() ? $"I found the following entities ({item.Value.Count():d}):" : "I found no entities.");
-                    item.Value.ToList().ForEach(result => Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
-                    Console.WriteLine();
+                    _console.WriteLine(item.Value.Any() ? $"I found the following entities ({item.Value.Count():d}):" : "I found no entities.");
+                    item.Value.ToList().ForEach(result => _console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
+                    _console.WriteLine();
                 }
 
                 return 0;

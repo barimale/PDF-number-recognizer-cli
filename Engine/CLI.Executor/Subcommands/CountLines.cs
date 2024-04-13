@@ -13,10 +13,12 @@ namespace CLI.PdfExtractor.Subcommands
     public class CountLines
     {
         private readonly ILogger<CountLines> _logger;
+        private readonly IConsole _console;
 
-        public CountLines(ILogger<CountLines> logger)
+        public CountLines(ILogger<CountLines> logger, IConsole console)
         {
             _logger = logger;
+            _console = console;
         }
 
         [FileExists]
@@ -43,7 +45,7 @@ namespace CLI.PdfExtractor.Subcommands
                 };
 
                 var linesCount = engine.Execute(inputData);
-                Console.WriteLine($"Lines count: {linesCount}");
+                _console.WriteLine($"Lines count: {linesCount}");
 
                 return 0;
             }

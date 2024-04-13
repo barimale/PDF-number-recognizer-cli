@@ -13,10 +13,12 @@ namespace CLI.PdfExtractor.Subcommands
     public class DetectLanguage
     {
         private readonly ILogger<DetectLanguage> _logger;
+        private readonly IConsole _console;
 
-        public DetectLanguage(ILogger<DetectLanguage> logger)
+        public DetectLanguage(ILogger<DetectLanguage> logger, IConsole console)
         {
             _logger = logger;
+            _console = console;
         }
 
         [FileExists]
@@ -49,7 +51,7 @@ namespace CLI.PdfExtractor.Subcommands
                 };
 
                 var resultCulture = engine.Execute(inputData);
-                Console.WriteLine($"Detected language: {resultCulture}");
+                _console.WriteLine($"Detected language: {resultCulture}");
 
                 return 0;
             }
