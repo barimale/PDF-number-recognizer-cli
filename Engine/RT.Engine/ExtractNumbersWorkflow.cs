@@ -31,14 +31,15 @@ namespace TR.Engine
 
                 if (_input.Culture == null)
                 {
-                    var result = _languageDetector.Detect(output, 20).Result;
+                    var result = _languageDetector.Detect(output, 20, _input.Strategy).Result;
                     _input.Culture = result;
                 }
 
                 var results = _pdfParserService.Execute(
                     output,
                     _input.RandomAmount,
-                    _input.Culture);
+                    _input.Culture,
+                    _input.Strategy);
 
                 return results;
             }
@@ -54,5 +55,6 @@ namespace TR.Engine
         public string PdfPath { get; set; }
         public string? Culture { get; set; }
         public int RandomAmount { get; set; }
+        public string Strategy { get; set; }
     }
 }

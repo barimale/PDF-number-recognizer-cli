@@ -7,11 +7,11 @@ namespace TR.Engine.Services
 {
     public class LanguageDetector : ILanguageDetector
     {
-        public async Task<string?> Detect(List<string> input, int randomAmount)
+        public async Task<string?> Detect(List<string> input, int randomAmount, string strategyName)
         {
             DetectLanguageClient client = new DetectLanguageClient("30794da0c353725a323396aebfa864c2");
 
-            var narrowed = LanguageDetectionStrategy.ExecuteRandom(input, randomAmount);
+            var narrowed = LanguageDetectionStrategy.ResolveStrategy(strategyName, input, randomAmount);
 
             var results = new ConcurrentBag<string>();
             narrowed.ForEach( p => results.Add(

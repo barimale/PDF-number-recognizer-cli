@@ -38,7 +38,7 @@ namespace Logic.UT.As_a_developer
 
             // when
             var detector = new LanguageDetector();
-            var result = await detector.Detect(output, 5);
+            var result = await detector.Detect(output, 5, "ExecuteAll");
 
             // then
             Assert.NotNull(result);

@@ -37,13 +37,18 @@ namespace CLI.PdfExtractor.Subcommands
         [Range(1, 500)]
         private int RandomAmount { get; } = 5;
 
+        [Option("-s",
+         Description = "strategy")]
+        [McMaster.Extensions.CommandLineUtils.AllowedValues("ExecuteRandom", "ExecuteTop1000OrAll", "ExecuteAll", IgnoreCase = false)]
+        public string Strategy { get; } = "ExecuteRandom";
+
         private async Task<int> OnExecuteAsync(
                     CommandLineApplication app,
                     CancellationToken cancellationToken = default)
         {
             try
             {
-                if (string.IsNullOrEmpty(PdfPath))
+                if (string.IsNullOrEmpty(PdfPath) || string.IsNullOrEmpty(Strategy))
                 {
                     app.ShowHelp();
                     return 0;
@@ -58,7 +63,8 @@ namespace CLI.PdfExtractor.Subcommands
                 {
                     PdfPath = PdfPath,
                     Culture = LanguageCulture,
-                    RandomAmount = RandomAmount
+                    RandomAmount = RandomAmount,
+                    Strategy = Strategy
                 };
 
                 var results = engine.Execute(inputData);

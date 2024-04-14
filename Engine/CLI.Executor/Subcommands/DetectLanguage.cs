@@ -30,6 +30,11 @@ namespace CLI.PdfExtractor.Subcommands
            Description = "random amount")]
         private int RandomAmount { get; } = 5;
 
+        [Option("-s",
+           Description = "strategy")]
+        [AllowedValues("ExecuteRandom", "ExecuteTop1000OrAll", "ExecuteAll", IgnoreCase = false)]
+        public string Strategy { get; } = "ExecuteRandom";
+
         private async Task<int> OnExecuteAsync(
             CommandLineApplication app,
             CancellationToken cancellationToken = default)
@@ -47,7 +52,8 @@ namespace CLI.PdfExtractor.Subcommands
                 var inputData = new DetectLanguageWorkflowClass()
                 {
                     PdfPath = PdfPath,
-                    RandomAmount = RandomAmount
+                    RandomAmount = RandomAmount,
+                    Strategy = Strategy
                 };
 
                 var resultCulture = engine.Execute(inputData);

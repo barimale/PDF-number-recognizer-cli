@@ -2,6 +2,6 @@
 {
     public interface ILanguageDetector
     {
-        Task<string?> Detect(List<string> input, int randomAmount);
+        Task<string?> Detect(List<string> input, int randomAmount, string strategyName);
     }
 }
