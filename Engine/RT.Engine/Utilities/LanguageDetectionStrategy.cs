@@ -2,6 +2,7 @@
 {
     public class LanguageDetectionStrategy
     {
+        //WIP check it in the book
         public static List<string>? ResolveStrategy(string strategyName, List<string> input, int randomAmount)
         {
             switch (strategyName)
