@@ -5,6 +5,8 @@
         //WIP check it in the book
         // maybe abstract strategy, three specific strategies
         // then activator to resolvestrategy instead of switch
+        // Assembly asm = typeof(SomeKnownType).Assembly;
+        // Type type = asm.GetType(namespaceQualifiedTypeName);
         public static List<string>? ResolveStrategy(string strategyName, List<string> input, int randomAmount)
         {
             switch (strategyName)
