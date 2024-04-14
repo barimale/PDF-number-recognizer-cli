@@ -17,7 +17,7 @@ namespace TR.Engine.Services
             foreach (var item in narrowed)
             {
                 var results = PdfParserUtility.ParseAll(item, culture);
-                dic.Add(item, results);
+                dic.TryAdd(item, results);
             }
 
             return dic;
