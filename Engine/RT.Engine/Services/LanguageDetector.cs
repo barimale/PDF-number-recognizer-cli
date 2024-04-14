@@ -14,8 +14,8 @@ namespace TR.Engine.Services
             var narrowed = input.OrderBy(x => rnd.Next()).Take(randomAmount).ToList();
 
             var results = new ConcurrentBag<string>();
-            narrowed.AsParallel().ForAll(async p => results.Add(
-                await client.DetectCodeAsync(p))
+            narrowed.ForEach( p => results.Add(
+                 client.DetectCodeAsync(p).Result)
             );
 
             var theMostFrequent = results

@@ -51,7 +51,7 @@ namespace CLI.PdfExtractor.Subcommands
                 };
 
                 var resultCulture = engine.Execute(inputData);
-                _console.WriteLine($"Detected language: {resultCulture}");
+                _console.WriteLine($"Detected language: {resultCulture ?? "undefined"}");
 
                 return 0;
             }
