@@ -1,5 +1,7 @@
 ﻿namespace TR.Engine.Utilities
 {
+    // WIP extract parameter in subcommands
+    // Activator <- use it, parameter has only three params: ExecuteRandom...
     public class LanguageDetectionStrategy
     {
         public static List<string>? ExecuteRandom(List<string> input, int randomAmount)
