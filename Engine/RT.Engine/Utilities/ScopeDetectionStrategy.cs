@@ -2,13 +2,6 @@
 {
     public class ScopeDetectionStrategy
     {
-        //WIP check it in the book
-        // maybe abstract strategy, three specific strategies
-        // then activator to resolvestrategy instead of switch
-        // Assembly asm = typeof(SomeKnownType).Assembly;
-        // Type type = asm.GetType(namespaceQualifiedTypeName);
-        // obj = (AbstractStrategyWithExecutemethod)Activator.CreateInstance(asm, ExecuteRandom))
-        // return obj.Execute(input, randomAmount)
         public static List<string>? ResolveStrategy(string strategyName, List<string> input, int randomAmount)
         {
             switch (strategyName)
