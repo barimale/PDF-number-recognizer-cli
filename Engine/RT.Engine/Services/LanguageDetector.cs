@@ -1,8 +1,10 @@
 ﻿using DetectLanguage;
+using System.Collections.Concurrent;
+using TR.Engine.Contract;
 
 namespace TR.Engine.Services
 {
-    public class LanguageDetector
+    public class LanguageDetector : ILanguageDetector
     {
         public async Task<string?> Detect(List<string> input, int randomAmount)
         {

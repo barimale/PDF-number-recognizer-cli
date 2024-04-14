@@ -1,12 +1,25 @@
 ﻿using Microsoft.Recognizers.Text;
 using TR.Engine.Contract;
-using TR.Engine.Services;
 
 namespace TR.Engine
 {
     public class ExtractNumbersWorkflow : IExtractNumbersService
     {
+        private readonly IPdfReaderService _pdfService;
+        private readonly ILanguageDetector _languageDetector;
+        private readonly IPdfParserService _pdfParserService;
+
         private ExtractNumbersModelWorkflowClass _input;
+
+        public ExtractNumbersWorkflow(
+            IPdfReaderService pdfService,
+            ILanguageDetector languageDetector,
+            IPdfParserService pdfParserService)
+        {
+            _pdfService = pdfService;
+            _languageDetector = languageDetector;
+            _pdfParserService = pdfParserService;
+        }
 
         public Dictionary<string, IEnumerable<ModelResult>> Execute(ExtractNumbersModelWorkflowClass input)
         {
@@ -14,18 +27,15 @@ namespace TR.Engine
             {
                 _input = input;
 
-                var engine = new PdfReaderService();
-                var output = engine.ExtractTextFromPDF(_input.PdfPath);
+                var output = _pdfService.ExtractTextFromPDF(_input.PdfPath);
 
                 if (_input.Culture == null)
                 {
-                    var detector = new LanguageDetector();
-                    var result = detector.Detect(output, 20).Result;
+                    var result = _languageDetector.Detect(output, 20).Result;
                     _input.Culture = result;
                 }
 
-                var parser = new PdfParserService();
-                var results = parser.Execute(
+                var results = _pdfParserService.Execute(
                     output,
                     _input.RandomAmount,
                     _input.Culture);

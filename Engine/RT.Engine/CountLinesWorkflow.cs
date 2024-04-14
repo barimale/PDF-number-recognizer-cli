@@ -1,11 +1,17 @@
 ﻿using TR.Engine.Contract;
-using TR.Engine.Services;
 
 namespace TR.Engine
 {
     public class CountLinesWorkflow : ICountLinesWorkflow
     {
+        private readonly IPdfReaderService _pdfReaderService;
+
         private CountLinesWorkflowClass _input;
+
+        public CountLinesWorkflow(IPdfReaderService pdfReaderService)
+        {
+            _pdfReaderService = pdfReaderService;
+        }
 
         public int? Execute(CountLinesWorkflowClass input)
         {
@@ -13,8 +19,7 @@ namespace TR.Engine
             {
                 _input = input;
 
-                var engine = new PdfReaderService();
-                var output = engine.ExtractTextFromPDF(_input.OutputModelPath);
+                var output = _pdfReaderService.ExtractTextFromPDF(_input.OutputModelPath);
 
                 return output.Count;
             }

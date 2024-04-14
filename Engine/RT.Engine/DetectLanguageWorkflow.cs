@@ -1,22 +1,30 @@
 ﻿using TR.Engine.Contract;
-using TR.Engine.Services;
 
 namespace TR.Engine
 {
     public class DetectLanguageWorkflow : IDetectLanguageWorkflow
     {
+        private readonly IPdfReaderService _pdfService;
+        private readonly ILanguageDetector _languageDetector;
+
         private DetectLanguageWorkflowClass _input;
+
+        public DetectLanguageWorkflow(
+            IPdfReaderService pdfService,
+            ILanguageDetector languageDetector)
+        {
+            _pdfService = pdfService;
+            _languageDetector = languageDetector;
+        }
+
         public string? Execute(DetectLanguageWorkflowClass input)
         {
             try
             {
                 _input = input;
 
-                var engine = new PdfReaderService();
-                var output = engine.ExtractTextFromPDF(_input.PdfPath);
-
-                var detector = new LanguageDetector();
-                var result = detector.Detect(output, _input.RandomAmount).Result;
+                var output = _pdfService.ExtractTextFromPDF(_input.PdfPath);
+                var result = _languageDetector.Detect(output, _input.RandomAmount).Result;
 
                 return result;
             }

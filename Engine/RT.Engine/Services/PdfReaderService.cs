@@ -1,10 +1,11 @@
 ﻿using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 using System.Text;
+using TR.Engine.Contract;
 
 namespace TR.Engine.Services
 {
-    public class PdfReaderService
+    public class PdfReaderService : IPdfReaderService
     {
         public List<string> ExtractTextFromPDF(string filePath)
         {

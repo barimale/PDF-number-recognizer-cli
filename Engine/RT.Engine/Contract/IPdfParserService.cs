@@ -1,0 +1,9 @@
+﻿using Microsoft.Recognizers.Text;
+
+namespace TR.Engine.Contract
+{
+    public interface IPdfParserService
+    {
+        Dictionary<string, IEnumerable<ModelResult>> Execute(List<string> output, int randomAmount, string culture);
+    }
+}
