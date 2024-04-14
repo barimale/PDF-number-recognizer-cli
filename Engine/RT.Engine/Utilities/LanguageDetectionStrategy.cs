@@ -7,6 +7,8 @@
         // then activator to resolvestrategy instead of switch
         // Assembly asm = typeof(SomeKnownType).Assembly;
         // Type type = asm.GetType(namespaceQualifiedTypeName);
+        // obj = (AbstractStrategyWithExecutemethod)Activator.CreateInstance(asm, ExecuteRandom))
+        // return obj.Execute(input, randomAmount)
         public static List<string>? ResolveStrategy(string strategyName, List<string> input, int randomAmount)
         {
             switch (strategyName)
@@ -14,9 +16,9 @@
                 case "ExecuteRandom":
                     return ExecuteRandom(input, randomAmount);
                 case "ExecuteTop1000OrAll":
-                    return ExecuteTop1000OrAll(input);
+                    return ExecuteTop1000OrAll(input, randomAmount);
                 case "ExecuteAll":
-                    return ExecuteAll(input);
+                    return ExecuteAll(input, randomAmount);
                 default:
                     return ExecuteRandom(input, randomAmount);
             }
@@ -30,7 +32,7 @@
             return narrowed;
         }
 
-        internal static List<string>? ExecuteTop1000OrAll(List<string> input)
+        internal static List<string>? ExecuteTop1000OrAll(List<string> input, int randomAmount)
         {
             var randomAmount2= Math.Min(input.Count, 1000);
 
@@ -40,7 +42,7 @@
             return narrowed;
         }
 
-        internal static List<string>? ExecuteAll(List<string> input)
+        internal static List<string>? ExecuteAll(List<string> input, int randomAmount)
         {
             var rnd = new Random();
             var narrowed = input.OrderBy(x => rnd.Next()).Take(input.Count).ToList();
