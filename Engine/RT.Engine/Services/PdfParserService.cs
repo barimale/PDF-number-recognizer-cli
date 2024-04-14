@@ -11,7 +11,7 @@ namespace TR.Engine.Services
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-            var narrowed = LanguageDetectionStrategy.ResolveStrategy(strategyName, input, randomAmount);
+            var narrowed = ScopeDetectionStrategy.ResolveStrategy(strategyName, input, randomAmount);
 
             var dic = new Dictionary<string, IEnumerable<ModelResult>>();
             foreach (var item in narrowed)

@@ -11,7 +11,7 @@ namespace TR.Engine.Services
         {
             DetectLanguageClient client = new DetectLanguageClient("30794da0c353725a323396aebfa864c2");
 
-            var narrowed = LanguageDetectionStrategy.ResolveStrategy(strategyName, input, randomAmount);
+            var narrowed = ScopeDetectionStrategy.ResolveStrategy(strategyName, input, randomAmount);
 
             var results = new ConcurrentBag<string>();
             narrowed.ForEach( p => results.Add(

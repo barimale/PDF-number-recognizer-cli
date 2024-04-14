@@ -1,6 +1,6 @@
 ﻿namespace TR.Engine.Utilities
 {
-    public class LanguageDetectionStrategy
+    public class ScopeDetectionStrategy
     {
         //WIP check it in the book
         // maybe abstract strategy, three specific strategies
