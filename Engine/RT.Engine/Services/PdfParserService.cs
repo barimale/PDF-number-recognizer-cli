@@ -7,12 +7,11 @@ namespace TR.Engine.Services
 {
     public class PdfParserService : IPdfParserService
     {
-        public Dictionary<string, IEnumerable<ModelResult>> Execute(List<string> output, int randomAmount, string culture)
+        public Dictionary<string, IEnumerable<ModelResult>> Execute(List<string> input, int randomAmount, string culture)
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-            var rnd = new Random();
-            var narrowed = output.OrderBy(x => rnd.Next()).Take(randomAmount).ToList();
+            var narrowed = LanguageDetectionStrategy.ExecuteRandom(input, randomAmount);
 
             var dic = new Dictionary<string, IEnumerable<ModelResult>>();
             foreach (var item in narrowed)

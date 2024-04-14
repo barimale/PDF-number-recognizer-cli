@@ -1,6 +1,7 @@
 ﻿using DetectLanguage;
 using System.Collections.Concurrent;
 using TR.Engine.Contract;
+using TR.Engine.Utilities;
 
 namespace TR.Engine.Services
 {
@@ -10,8 +11,7 @@ namespace TR.Engine.Services
         {
             DetectLanguageClient client = new DetectLanguageClient("30794da0c353725a323396aebfa864c2");
 
-            var rnd = new Random();
-            var narrowed = input.OrderBy(x => rnd.Next()).Take(randomAmount).ToList();
+            var narrowed = LanguageDetectionStrategy.ExecuteRandom(input, randomAmount);
 
             var results = new ConcurrentBag<string>();
             narrowed.ForEach( p => results.Add(
