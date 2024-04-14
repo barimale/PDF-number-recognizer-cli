@@ -2,9 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using TR.Engine;
-using TR.Engine.Contract;
-using TR.Engine.Services;
+using TR.Engine.DI;
 
 namespace CLI.PdfExtractor
 {
@@ -30,12 +28,7 @@ namespace CLI.PdfExtractor
                 .ConfigureServices((context, services) =>
                 {
                     services
-                        .AddScoped<ILanguageDetector, LanguageDetector>()
-                        .AddScoped<IPdfReaderService, PdfReaderService>()
-                        .AddScoped<IPdfParserService, PdfParserService>()
-                        .AddScoped<ICountLinesWorkflow, CountLinesWorkflow>()
-                        .AddScoped<IExtractNumbersService, ExtractNumbersWorkflow>()
-                        .AddScoped<IDetectLanguageWorkflow, DetectLanguageWorkflow>()
+                        .AddTREngineServices()
                         .AddSingleton(PhysicalConsole.Singleton);
                 })
                 .RunCommandLineApplicationAsync<Program>(args);
