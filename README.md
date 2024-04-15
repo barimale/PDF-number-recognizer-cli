@@ -1,4 +1,4 @@
-# Text recognizer - CLI tool
+# PDF Text recognizer - CLI tool
 Features:
 - lines counter
 - language detector
