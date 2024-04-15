@@ -66,7 +66,7 @@ namespace CLI.PdfExtractor.Subcommands
                     PdfPath = PdfPath,
                     Culture = LanguageCulture,
                     RandomAmount = RandomAmount,
-                    Strategy = EnumUtility.ParseEnum<ScopeDetectionStrategyEnum>(Strategy)
+                    Strategy = Strategy.ParseEnum<ScopeDetectionStrategyEnum>()
                 };
 
                 var results = engine.Execute(inputData);
