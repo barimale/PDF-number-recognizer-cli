@@ -1,16 +1,18 @@
-﻿namespace TR.Engine.Utilities
+﻿using TR.Engine.Model;
+
+namespace TR.Engine.Utilities
 {
     public class ScopeDetectionStrategy
     {
-        public static List<string>? ResolveStrategy(string strategyName, List<string> input, int randomAmount)
+        public static List<string>? ResolveStrategy(ScopeDetectionStrategyEnum strategyName, List<string> input, int randomAmount)
         {
             switch (strategyName)
             {
-                case "ExecuteRandom":
+                case ScopeDetectionStrategyEnum.ExecuteRandom:
                     return ExecuteRandom(input, randomAmount);
-                case "ExecuteTop1000OrAll":
+                case ScopeDetectionStrategyEnum.ExecuteTop1000OrAll:
                     return ExecuteTop1000OrAll(input, randomAmount);
-                case "ExecuteAll":
+                case ScopeDetectionStrategyEnum.ExecuteAll:
                     return ExecuteAll(input, randomAmount);
                 default:
                     return ExecuteRandom(input, randomAmount);

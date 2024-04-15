@@ -1,7 +1,9 @@
-﻿namespace TR.Engine.Contract
+﻿using TR.Engine.Model;
+
+namespace TR.Engine.Contract
 {
     public interface ILanguageDetector
     {
-        Task<string?> Detect(List<string> input, int randomAmount, string strategyName);
+        Task<string?> Detect(List<string> input, int randomAmount);
     }
 }

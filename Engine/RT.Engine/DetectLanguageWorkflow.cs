@@ -26,8 +26,8 @@ namespace TR.Engine
                 var output = _pdfService.ExtractTextFromPDF(_input.PdfPath);
                 var result = _languageDetector.Detect(
                     output, 
-                    _input.RandomAmount,
-                    _input.Strategy).Result;
+                    _input.RandomAmount
+                    ).Result;
 
                 return result;
             }
@@ -42,6 +42,5 @@ namespace TR.Engine
     {
         public int RandomAmount { get; set; }
         public string PdfPath { get; set; }
-        public string Strategy { get; set; }
     }
 }

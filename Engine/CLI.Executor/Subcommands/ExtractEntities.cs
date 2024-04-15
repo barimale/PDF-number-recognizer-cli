@@ -5,6 +5,8 @@ using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using TR.Engine;
 using TR.Engine.Contract;
+using TR.Engine.Model;
+using TR.Engine.Utilities;
 
 namespace CLI.PdfExtractor.Subcommands
 {
@@ -64,7 +66,7 @@ namespace CLI.PdfExtractor.Subcommands
                     PdfPath = PdfPath,
                     Culture = LanguageCulture,
                     RandomAmount = RandomAmount,
-                    Strategy = Strategy
+                    Strategy = EnumUtility.ParseEnum<ScopeDetectionStrategyEnum>(Strategy)
                 };
 
                 var results = engine.Execute(inputData);

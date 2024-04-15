@@ -27,13 +27,8 @@ namespace CLI.PdfExtractor.Subcommands
         private string PdfPath { get; } = string.Empty;
 
         [Option("-n",
-           Description = "random amount")]
+           Description = "random amount. Default strategy random.")]
         private int RandomAmount { get; } = 5;
-
-        [Option("-s",
-           Description = "strategy")]
-        [AllowedValues("ExecuteRandom", "ExecuteTop1000OrAll", "ExecuteAll", IgnoreCase = false)]
-        public string Strategy { get; } = "ExecuteRandom";
 
         private async Task<int> OnExecuteAsync(
             CommandLineApplication app,
@@ -53,7 +48,6 @@ namespace CLI.PdfExtractor.Subcommands
                 {
                     PdfPath = PdfPath,
                     RandomAmount = RandomAmount,
-                    Strategy = Strategy
                 };
 
                 var resultCulture = engine.Execute(inputData);

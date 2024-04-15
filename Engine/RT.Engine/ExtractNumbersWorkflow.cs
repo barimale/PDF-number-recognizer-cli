@@ -1,5 +1,6 @@
 ﻿using Microsoft.Recognizers.Text;
 using TR.Engine.Contract;
+using TR.Engine.Model;
 
 namespace TR.Engine
 {
@@ -31,7 +32,7 @@ namespace TR.Engine
 
                 if (_input.Culture == null)
                 {
-                    var result = _languageDetector.Detect(output, 20, _input.Strategy).Result;
+                    var result = _languageDetector.Detect(output, _input.RandomAmount).Result;
                     _input.Culture = result;
                 }
 
@@ -55,6 +56,6 @@ namespace TR.Engine
         public string PdfPath { get; set; }
         public string? Culture { get; set; }
         public int RandomAmount { get; set; }
-        public string Strategy { get; set; }
+        public ScopeDetectionStrategyEnum Strategy { get; set; }
     }
 }

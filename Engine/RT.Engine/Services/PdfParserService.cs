@@ -1,13 +1,14 @@
 ﻿using Microsoft.Recognizers.Text;
 using System.Text;
 using TR.Engine.Contract;
+using TR.Engine.Model;
 using TR.Engine.Utilities;
 
 namespace TR.Engine.Services
 {
     public class PdfParserService : IPdfParserService
     {
-        public Dictionary<string, IEnumerable<ModelResult>> Execute(List<string> input, int randomAmount, string culture, string strategyName)
+        public Dictionary<string, IEnumerable<ModelResult>> Execute(List<string> input, int randomAmount, string culture, ScopeDetectionStrategyEnum strategyName)
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
