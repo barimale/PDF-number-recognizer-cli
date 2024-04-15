@@ -19,7 +19,7 @@ namespace TR.Engine.Utilities
             }
         }
 
-        internal static List<string>? ExecuteRandom(List<string> input, int randomAmount)
+        private static List<string>? ExecuteRandom(List<string> input, int randomAmount)
         {
             var rnd = new Random();
             var narrowed = input.OrderBy(x => rnd.Next()).Take(randomAmount).ToList();
@@ -27,7 +27,7 @@ namespace TR.Engine.Utilities
             return narrowed;
         }
 
-        internal static List<string>? ExecuteTop1000OrAll(List<string> input, int randomAmount)
+        private static List<string>? ExecuteTop1000OrAll(List<string> input, int randomAmount)
         {
             var randomAmount2= Math.Min(input.Count, 1000);
 
@@ -37,7 +37,7 @@ namespace TR.Engine.Utilities
             return narrowed;
         }
 
-        internal static List<string>? ExecuteAll(List<string> input, int randomAmount)
+        private static List<string>? ExecuteAll(List<string> input, int randomAmount)
         {
             var rnd = new Random();
             var narrowed = input.OrderBy(x => rnd.Next()).Take(input.Count).ToList();
