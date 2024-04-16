@@ -28,6 +28,7 @@ namespace CLI.PdfExtractor.Subcommands
 
         [Option("-n",
            Description = "random amount. Default strategy random.")]
+        [Range(1, 1000)]
         private int RandomAmount { get; } = 5;
 
         private async Task<int> OnExecuteAsync(
