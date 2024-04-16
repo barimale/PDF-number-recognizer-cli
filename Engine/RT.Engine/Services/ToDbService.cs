@@ -1,5 +1,6 @@
 ﻿using Elastic.Clients.Elasticsearch;
 using Elastic.Clients.Elasticsearch.Nodes;
+using TR.Engine.Contract;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace TR.Engine.Services

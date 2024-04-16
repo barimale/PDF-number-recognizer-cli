@@ -1,6 +1,6 @@
 ﻿using Elastic.Clients.Elasticsearch;
 
-namespace TR.Engine.Services
+namespace TR.Engine.Contract
 {
     public interface IToDbService
     {
