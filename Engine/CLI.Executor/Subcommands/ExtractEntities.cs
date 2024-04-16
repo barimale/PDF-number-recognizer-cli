@@ -44,6 +44,10 @@ namespace CLI.PdfExtractor.Subcommands
         [McMaster.Extensions.CommandLineUtils.AllowedValues("ExecuteRandom", "ExecuteTop1000OrAll", "ExecuteAll", IgnoreCase = false)]
         public string Strategy { get; } = "ExecuteRandom";
 
+        [Option("-c",
+            Description = "connection string to Elasticsearch DB")]
+        private string? ToDb { get; } = null;
+
         private async Task<int> OnExecuteAsync(
                     CommandLineApplication app,
                     CancellationToken cancellationToken = default)
@@ -66,7 +70,8 @@ namespace CLI.PdfExtractor.Subcommands
                     PdfPath = PdfPath,
                     Culture = LanguageCulture,
                     RandomAmount = RandomAmount,
-                    Strategy = Strategy.ParseEnum<ScopeDetectionStrategyEnum>()
+                    Strategy = Strategy.ParseEnum<ScopeDetectionStrategyEnum>(),
+                    ToDb = ToDb != null ? new Uri(ToDb) : null
                 };
 
                 var results = engine.Execute(inputData);

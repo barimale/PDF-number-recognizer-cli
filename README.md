@@ -6,3 +6,4 @@ Features:
 
 # TODOs
 Return results to Elasticsearch and later on search over in a contextual way.
+Add ToDB , connectionstring to elasticsearch db

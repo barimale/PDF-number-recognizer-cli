@@ -1,6 +1,8 @@
-﻿using Microsoft.Recognizers.Text;
+﻿using Elastic.Clients.Elasticsearch;
+using Microsoft.Recognizers.Text;
 using TR.Engine.Contract;
 using TR.Engine.Model;
+using TR.Engine.Services;
 
 namespace TR.Engine
 {
@@ -42,6 +44,22 @@ namespace TR.Engine
                     _input.Culture,
                     _input.Strategy);
 
+                if(_input.ToDb != null)
+                {
+                    try
+                    {
+                        var dbEngine = new ToDbService(_input.ToDb);
+                        foreach (var result in results)
+                        {
+                            dbEngine.AddEntity(result, new Id(_input.PdfPath));
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        // intentionally left blank
+                    }
+                }
+
                 return results;
             }
             catch (Exception)
@@ -57,5 +75,6 @@ namespace TR.Engine
         public string? Culture { get; set; }
         public int RandomAmount { get; set; }
         public ScopeDetectionStrategyEnum Strategy { get; set; }
+        public Uri ToDb { get; set; }
     }
 }
