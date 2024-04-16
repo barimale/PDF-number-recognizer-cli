@@ -1,6 +1,7 @@
 ﻿using McMaster.Extensions.CommandLineUtils;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.ComponentModel.DataAnnotations;
 using TR.Engine;
 using TR.Engine.Contract;
 
@@ -28,7 +29,7 @@ namespace CLI.PdfExtractor.Subcommands
 
         [Option("-n",
            Description = "random amount. Default strategy random.")]
-        [Range(1, 1000)]
+        [Range(1, 500)]
         private int RandomAmount { get; } = 5;
 
         private async Task<int> OnExecuteAsync(

@@ -35,12 +35,12 @@ namespace CLI.PdfExtractor.Subcommands
         private string? LanguageCulture { get; } = null;
 
         [Option("-n",
-             Description = "random amount")]
-        [Range(1, 500000)]
+            Description = "random amount")]
+        [Range(1, 50000)]
         private int RandomAmount { get; } = 5;
 
         [Option("-s",
-         Description = "strategy")]
+            Description = "strategy")]
         [McMaster.Extensions.CommandLineUtils.AllowedValues("ExecuteRandom", "ExecuteTop1000OrAll", "ExecuteAll", IgnoreCase = false)]
         public string Strategy { get; } = "ExecuteRandom";
 
