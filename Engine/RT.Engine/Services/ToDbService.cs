@@ -13,6 +13,7 @@ namespace TR.Engine.Services
             _client = new ElasticsearchClient(uri);
         }
 
+        // WIP double check it
         public async Task<bool> AddEntity<T>(T content, Id fileName)
         {
             var response = await _client.IndexAsync<T>(content, fileName);
