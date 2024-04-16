@@ -36,7 +36,7 @@ namespace CLI.PdfExtractor.Subcommands
 
         [Option("-n",
              Description = "random amount")]
-        [Range(1, 500)]
+        [Range(1, 500000)]
         private int RandomAmount { get; } = 5;
 
         [Option("-s",
