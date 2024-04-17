@@ -4,6 +4,6 @@ namespace TR.Engine.Contract
 {
     public interface IToDbService
     {
-        Task<bool> AddEntity<T>(T content, Id fileName);
+        Task<bool> AddDocument<T>(T content);
     }
 }

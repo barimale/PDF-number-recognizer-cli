@@ -44,6 +44,7 @@ namespace TR.Engine
                     _input.Culture,
                     _input.Strategy);
 
+                // switch to SQL or add it as xml file
                 if(_input.ToDb != null)
                 {
                     try
@@ -51,7 +52,7 @@ namespace TR.Engine
                         var dbEngine = new ToDbService(_input.ToDb);
                         foreach (var result in results)
                         {
-                            dbEngine.AddEntity(result, new Id(_input.PdfPath));
+                            dbEngine.AddDocument(result);
                         }
                     }
                     catch (Exception)

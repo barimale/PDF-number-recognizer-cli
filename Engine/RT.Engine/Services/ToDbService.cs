@@ -1,7 +1,5 @@
 ﻿using Elastic.Clients.Elasticsearch;
-using Elastic.Clients.Elasticsearch.Nodes;
 using TR.Engine.Contract;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace TR.Engine.Services
 {
@@ -13,15 +11,9 @@ namespace TR.Engine.Services
             _client = new ElasticsearchClient(uri);
         }
 
-        // WIP double check it
-        public async Task<bool> AddEntity<T>(T content, Id fileName)
+        public async Task<bool> AddDocument<T>(T content)
         {
-            var response = await _client.IndexAsync<T>(content, fileName);
-
-            if (response.IsValidResponse)
-            {
-                Console.WriteLine($"Index document with ID {response.Id} succeeded.");
-            }
+            var response = await _client.IndexAsync<T>(content);
 
             return response.IsValidResponse;
         }
