@@ -6,9 +6,21 @@ namespace TR.Engine.Services
     public class ToDbService : IToDbService
     {
         private readonly ElasticsearchClient _client;
-        public ToDbService(Uri uri)
+        private ToDbService(Uri uri)
         {
             _client = new ElasticsearchClient(uri);
+        }
+
+        public ToDbService(Uri uri, string apikey)
+            : this(uri)
+        {
+
+        }
+
+        public ToDbService(Uri uri, string username, string password)
+            :this(uri)
+        {
+
         }
 
         public async Task<bool> AddDocument<T>(T content)

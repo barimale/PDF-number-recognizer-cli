@@ -49,7 +49,7 @@ namespace TR.Engine
                 {
                     try
                     {
-                        var dbEngine = new ToDbService(_input.ToDb);
+                        var dbEngine = new ToDbService(_input.ToDb, "elastic", "changeme");
                         foreach (var result in results)
                         {
                             dbEngine.AddDocument(result);
