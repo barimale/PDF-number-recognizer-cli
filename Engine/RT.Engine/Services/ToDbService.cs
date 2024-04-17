@@ -1,4 +1,5 @@
 ﻿using Elastic.Clients.Elasticsearch;
+using Elastic.Transport;
 using TR.Engine.Contract;
 
 namespace TR.Engine.Services
@@ -6,21 +7,13 @@ namespace TR.Engine.Services
     public class ToDbService : IToDbService
     {
         private readonly ElasticsearchClient _client;
-        private ToDbService(Uri uri)
-        {
-            _client = new ElasticsearchClient(uri);
-        }
-
-        public ToDbService(Uri uri, string apikey)
-            : this(uri)
-        {
-
-        }
 
         public ToDbService(Uri uri, string username, string password)
-            :this(uri)
         {
+            var settings = new ElasticsearchClientSettings(uri)
+                .Authentication(new BasicAuthentication(username, password));
 
+            _client = new ElasticsearchClient(settings);
         }
 
         public async Task<bool> AddDocument<T>(T content)

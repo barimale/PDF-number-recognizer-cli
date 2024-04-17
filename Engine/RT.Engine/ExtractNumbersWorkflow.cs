@@ -44,12 +44,16 @@ namespace TR.Engine
                     _input.Culture,
                     _input.Strategy);
 
-                // switch to SQL or add it as xml file
-                if(_input.ToDb != null)
+                // expose as options: pass and username
+                if(_input.ToDb != null && _input.Username != null 
+                    && _input.Password != null)
                 {
                     try
                     {
-                        var dbEngine = new ToDbService(_input.ToDb, "elastic", "changeme");
+                        var dbEngine = new ToDbService(
+                            _input.ToDb, 
+                            _input.Username, 
+                            _input.Password);
                         foreach (var result in results)
                         {
                             dbEngine.AddDocument(result);
@@ -77,5 +81,7 @@ namespace TR.Engine
         public int RandomAmount { get; set; }
         public ScopeDetectionStrategyEnum Strategy { get; set; }
         public Uri ToDb { get; set; }
+        public string? Username { get; set; }
+        public string? Password { get; set; }
     }
 }

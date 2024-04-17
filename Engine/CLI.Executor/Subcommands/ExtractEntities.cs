@@ -48,6 +48,14 @@ namespace CLI.PdfExtractor.Subcommands
             Description = "connection string to Elasticsearch DB")]
         private string? ToDb { get; } = null;
 
+        [Option("-u",
+            Description = "username to Elasticsearch DB")]
+        private string? Username { get; } = null;
+
+        [Option("-p",
+           Description = "password to Elasticsearch DB")]
+        private string? Password { get; } = null;
+
         private async Task<int> OnExecuteAsync(
                     CommandLineApplication app,
                     CancellationToken cancellationToken = default)
@@ -71,7 +79,9 @@ namespace CLI.PdfExtractor.Subcommands
                     Culture = LanguageCulture,
                     RandomAmount = RandomAmount,
                     Strategy = Strategy.ParseEnum<ScopeDetectionStrategyEnum>(),
-                    ToDb = ToDb != null ? new Uri(ToDb) : null
+                    ToDb = ToDb != null ? new Uri(ToDb) : null,
+                    Username = Username,
+                    Password = Password,
                 };
 
                 var results = engine.Execute(inputData);
