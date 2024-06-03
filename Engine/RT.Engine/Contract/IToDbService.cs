@@ -4,6 +4,6 @@ namespace TR.Engine.Contract
 {
     public interface IToDbService
     {
-        Task<bool> AddDocument<T>(T content);
+        Task<bool> AddDocument<T>(T content, string indexName);
     }
 }

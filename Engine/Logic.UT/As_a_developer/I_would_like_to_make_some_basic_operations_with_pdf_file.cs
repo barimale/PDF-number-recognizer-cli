@@ -1,6 +1,7 @@
 using Logic.UT.BaseUT;
 using TR.Engine.Services;
 using Xunit.Abstractions;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Logic.UT.As_a_developer
 {
@@ -44,5 +45,37 @@ namespace Logic.UT.As_a_developer
             Assert.NotNull(result);
             Assert.Equal("en", result);
         }
+
+        [Fact]
+        public async Task Send_data_to_elasticsearch()
+        {
+            // given
+            var engine = new ToDbService(
+                new Uri("https://localhost:9200"),
+                "elastic",
+                "524DQGTLLZFBOiz8vdba");
+
+            var tweet = new Tweet
+            {
+                Id = 12,
+                User = "stevejgordonasd",
+                PostDate = new DateTime(2009, 11, 15),
+                Message = "Trying out the client, so far so good?"
+            };
+            // when
+
+            var result = await engine.AddDocument(tweet, "tweet-index");
+
+            // then
+            Assert.True(result);
+        }
+    }
+
+    internal class Tweet
+    {
+        public int Id { get; set; }
+        public string User { get; set; }
+        public DateTime PostDate { get; set; }
+        public string Message { get; set; }
     }
 }

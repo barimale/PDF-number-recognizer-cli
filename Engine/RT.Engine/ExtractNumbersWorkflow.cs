@@ -56,7 +56,7 @@ namespace TR.Engine
                             _input.Password);
                         foreach (var result in results)
                         {
-                            dbEngine.AddDocument(result);
+                            dbEngine.AddDocument(result, _input.Culture);
                         }
                     }
                     catch (Exception)
