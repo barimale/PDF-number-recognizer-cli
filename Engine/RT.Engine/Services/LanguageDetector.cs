@@ -24,13 +24,13 @@ namespace TR.Engine.Services
                 .ToList()
                 .Where(p => !string.IsNullOrEmpty(p))
                 .GroupBy(p => p)
-                .OrderByDescending(pp => pp.Key);
+                .OrderByDescending(pp => pp.Count());
 #endif
             var theMostFrequent = results
                 .ToList()
                 .Where(p => !string.IsNullOrEmpty(p))
                 .GroupBy(p => p)
-                .OrderByDescending(pp => pp.Key)
+                .OrderByDescending(pp => pp.Count())
                 .FirstOrDefault();
 
             return theMostFrequent != null ? theMostFrequent.Key : null;
