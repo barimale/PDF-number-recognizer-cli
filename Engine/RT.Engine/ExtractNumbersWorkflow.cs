@@ -1,5 +1,4 @@
-﻿using Elastic.Clients.Elasticsearch;
-using Microsoft.Recognizers.Text;
+﻿using Microsoft.Recognizers.Text;
 using TR.Engine.Contract;
 using TR.Engine.Model;
 using TR.Engine.Services;
@@ -44,7 +43,7 @@ namespace TR.Engine
                     _input.Culture,
                     _input.Strategy);
 
-                // expose as options: pass and username
+                // exposed as options: pass and username
                 if(_input.ToDb != null && _input.Username != null 
                     && _input.Password != null)
                 {
