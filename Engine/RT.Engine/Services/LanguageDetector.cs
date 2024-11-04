@@ -19,6 +19,13 @@ namespace TR.Engine.Services
                  client.DetectCodeAsync(p).Result)
             );
 
+#if DEBUG
+            var theMostFrequents = results
+                .ToList()
+                .Where(p => !string.IsNullOrEmpty(p))
+                .GroupBy(p => p)
+                .OrderByDescending(pp => pp.Key);
+#endif
             var theMostFrequent = results
                 .ToList()
                 .Where(p => !string.IsNullOrEmpty(p))
