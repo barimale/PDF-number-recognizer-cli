@@ -2,7 +2,7 @@
   "profiles": {
     "1.Tool.Executor.CLI": {
       "commandName": "Project",
-      "commandLineArgs": "extract-numbers \"e://Refactoring To Patterns - Joshua Kerievsky.pdf\" -n 90 -s ExecuteRandom -l en -c https://localhost:9200 -u elastic -p 524DQGTLLZFBOiz8vdba"
+      "commandLineArgs": "extract-numbers \"r://Refactoring To Patterns - Joshua Kerievsky.pdf\" -n 90 -s ExecuteRandom -l en -c https://localhost:9200 -u elastic -p  GRJJ2SAh21g-Vlo7w8+_"
     }
   }
 }
